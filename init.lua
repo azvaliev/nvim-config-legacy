@@ -1,0 +1,5 @@
+require('plugins')
+require('options')
+-- require('lsp')
+require('dashboard')
+vim.cmd('source ~/.config/nvim/coc.vim')
