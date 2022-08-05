@@ -9,6 +9,9 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 
+-- GraphQL
+Plug 'jparise/vim-graphql'
+
 -- Airline - Bottom bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,7 +43,6 @@ Plug 'github/copilot.vim'
 -- LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
-Plug 'whynothugo/lsp_lines.nvim'
 Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch = 'main' })
 
 
