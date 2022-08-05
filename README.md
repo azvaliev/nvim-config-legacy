@@ -19,7 +19,10 @@ Ensure the contents of this repo are in `~/.config/nvim`
 
 Open NeoVim anywhere and run this command `:PlugInstall` to install all plugins
 
-Next, for `COC` (responsible for amazing, fast code completion) re-open NeoVim anywhere and run `:CocInstall coc-tsserver coc-css coc-html coc-markdownlint coc-eslint`
+Next, for `COC` (responsible for amazing, fast code completion) re-open NeoVim anywhere and run
+```bash
+:CocInstall coc-tsserver coc-css coc-html coc-markdownlint coc-eslint
+```
 This will give you an LSP for TypeScript, JavaScript, ESLint, CSS, HTML, and Markdown. GraphQL is also included from the `coc-settings.json`. 
 
 For any other languages, see the guide [here](https://github.com/neoclide/coc.nvim/wiki/Language-servers) for configuration
