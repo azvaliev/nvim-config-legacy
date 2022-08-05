@@ -19,7 +19,7 @@ Ensure the contents of this repo are in `~/.config/nvim`
 
 Open NeoVim anywhere and run this command `:PlugInstall` to install all plugins
 
-Next, for `COC` (responsible for amazing, fast code completion) re-open NeoVim anywhere and run `:COCInstall`
+Next, for `COC` (responsible for amazing, fast code completion) re-open NeoVim anywhere and run `:CocInstall`
 
 #### You're all set!
 
