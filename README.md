@@ -11,7 +11,7 @@ Install [Vim-Plug](https://github.com/junegunn/vim-plug) for neovim
 ## Optional, but highly reccomended setting
 This config comes with a fuzzy finder (fzf.vim), to ensure proper usage I reccomend installing the dependencies listed [here](https://github.com/junegunn/fzf.vim#dependencies)
 
-And for faster file finding, you can also install (fd)[https://github.com/sharkdp/fd] and add the following to your `.zshrc`/`.bashrc`
+And for faster file finding, you can also install [fd](https://github.com/sharkdp/fd) and add the following to your `.zshrc`/`.bashrc`
 ```bash
 export FZF_DEFAULT_COMMAND='fd --type f'
 ```
