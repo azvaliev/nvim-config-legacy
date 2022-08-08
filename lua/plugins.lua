@@ -4,17 +4,6 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- General Dep
 Plug 'nvim-lua/plenary.nvim'
 
--- JS & TS
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
-
--- GraphQL
-Plug 'jparise/vim-graphql'
-
 -- Airline - Bottom bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -48,8 +37,23 @@ Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch 
 -- Autocomplete
 Plug('neoclide/coc.nvim', { branch = 'release'})
 
+-- GraphQL
+Plug 'jparise/vim-graphql'
+
 -- Tree Sitter
 Plug('nvim-treesitter/nvim-treesitter')
+
+-- JS & TS
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'mattn/emmet-vim'
+Plug 'alvan/vim-closetag'
+
+-- GO
+Plug 'ray-x/go.nvim'
+vim.cmd("Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }")
 
 -- Start Screen
 Plug 'goolord/alpha-nvim'

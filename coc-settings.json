@@ -10,5 +10,8 @@
 		"autoFixOnSave": true,
 		"format.enable": true,
 		"filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"]
+	},
+	"go": {
+		"completion": true
 	}
 }

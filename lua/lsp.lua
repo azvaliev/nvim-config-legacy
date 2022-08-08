@@ -39,11 +39,3 @@ nvim_lsp.tailwindcss.setup{
 	filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.jsx' }
 }
 
--- TypeScript
--- nvim_lsp.tsserver.setup {
--- 	filetypes = { 'typescript', 'typescriptreact', 'typescript.tsx', 'javascript', 'javascriptreact', 'javascript.jsx' },
---   on_attach = on_attach,
--- 	capabilities = capabilities
--- } nvim_lsp.tsserver.setup {}
--- nvim_lsp.tsserver.setup()
--- vim.cmd('COQnow -s')
