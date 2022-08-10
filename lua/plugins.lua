@@ -9,7 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 -- Themes
--- Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 -- Plug 'alessandroyorba/alduin'
 Plug 'joshdick/onedark.vim'
 -- Plug('embark-theme/vim', { as = 'embark', branch = 'main' })
@@ -25,6 +25,10 @@ Plug 'junegunn/fzf.vim'
 
 -- Icons
 Plug 'ryanoasis/vim-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
+
+-- UI
+Plug 'MunifTanjim/nui.nvim'
 
 -- Copilot
 Plug 'github/copilot.vim'
@@ -57,6 +61,9 @@ vim.cmd("Plug 'darrikonn/vim-gofmt', { 'do': ':GoUpdateBinaries' }")
 
 -- Start Screen
 Plug 'goolord/alpha-nvim'
+
+-- File Browser
+Plug('nvim-neo-tree/neo-tree.nvim')
 
 vim.call('plug#end')
 
