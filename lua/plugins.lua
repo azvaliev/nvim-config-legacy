@@ -34,8 +34,8 @@ Plug 'MunifTanjim/nui.nvim'
 -- Plug 'github/copilot.vim'
 
 -- LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'glepnir/lspsaga.nvim'
+-- Plug 'neovim/nvim-lspconfig'
+-- Plug 'glepnir/lspsaga.nvim'
 -- Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch = 'main' })
 
 -- Autocomplete

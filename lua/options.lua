@@ -63,7 +63,6 @@ vim.fn.sign_define("DiagnosticSignInfo",
 vim.fn.sign_define("DiagnosticSignHint",
 	{text = "", texthl = "DiagnosticSignHint"})
 
-vim.cmd('let g:closetag_filenames = \'*.html,*.tsx,*.jsx\'')
 vim.cmd('let g:airline#extensions#tabline#formatter = \'unique_tail_improved\'')
 vim.cmd('let g:airline_theme=\'minimalist\'')
 vim.o.background = 'dark'
