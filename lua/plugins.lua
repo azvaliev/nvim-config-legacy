@@ -31,12 +31,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 
 -- Copilot
-Plug 'github/copilot.vim'
+-- Plug 'github/copilot.vim'
 
 -- LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
-Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch = 'main' })
+-- Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch = 'main' })
 
 -- Autocomplete
 Plug('neoclide/coc.nvim', { branch = 'release'})
@@ -48,10 +48,6 @@ Plug 'jparise/vim-graphql'
 Plug('nvim-treesitter/nvim-treesitter')
 
 -- JS & TS
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
 
