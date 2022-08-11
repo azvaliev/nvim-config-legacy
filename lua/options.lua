@@ -62,12 +62,17 @@ vim.fn.sign_define("DiagnosticSignInfo",
 	{text = "i", texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",
 	{text = "", texthl = "DiagnosticSignHint"})
+
 vim.cmd('let g:closetag_filenames = \'*.html,*.tsx,*.jsx\'')
 vim.cmd('let g:airline#extensions#tabline#formatter = \'unique_tail_improved\'')
 vim.cmd('let g:airline_theme=\'minimalist\'')
 vim.o.background = 'dark'
 vim.cmd [[colorscheme nord]]
 
+-----------------------------------------------------------
+-- Auto close HTML tags
+-----------------------------------------------------------
+require("nvim-autopairs").setup {}
 -----------------------------------------------------------
 -- Neovim tree
 -----------------------------------------------------------
@@ -131,7 +136,7 @@ require("neo-tree").setup({
 				deleted   = "✘",-- this can only be used in the git_status source
 				renamed   = "ℜ",-- this can only be used in the git_status source
 				-- Status type
-				untracked = "ℕ",
+				untracked = "✨",
 				ignored   = "ⅈ",
 				unstaged  = "ℳ",
 				staged    = "✔",
@@ -306,7 +311,7 @@ require'nvim-web-devicons'.setup {
     color = "#8D8D8D",
     cterm_color = "8",
 		name = "template"
-	}
+	},
  };
  default = true;
 }

@@ -49,7 +49,7 @@ Plug('nvim-treesitter/nvim-treesitter')
 
 -- JS & TS
 Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
+Plug 'windwp/nvim-autopairs'
 
 -- GO
 Plug 'ray-x/go.nvim'
