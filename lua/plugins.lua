@@ -31,7 +31,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 
 -- Copilot
--- Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 -- LSP
 -- Plug 'neovim/nvim-lspconfig'
