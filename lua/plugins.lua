@@ -54,6 +54,7 @@ Plug('nvim-treesitter/nvim-treesitter')
 -- JS & TS
 Plug 'mattn/emmet-vim'
 Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-ts-autotag'
 
 -- GO
 Plug 'ray-x/go.nvim'

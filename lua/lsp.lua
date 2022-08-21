@@ -16,7 +16,7 @@ require("mason-lspconfig").setup({
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
@@ -40,9 +40,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
@@ -53,3 +53,15 @@ for _, lsp in ipairs(lsps) do
     flags = lsp_flags,
 	}
 end
+require('nvim-ts-autotag').setup()
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        underline = true,
+        virtual_text = {
+            spacing = 5,
+            severity_limit = 'Warning',
+        },
+        update_in_insert = true,
+    }
+)
