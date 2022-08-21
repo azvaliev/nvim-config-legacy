@@ -34,15 +34,19 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'github/copilot.vim'
 
 -- LSP
--- Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
 -- Plug 'glepnir/lspsaga.nvim'
--- Plug('https://git.sr.ht/~whynothugo/lsp_lines.nvim', { as = 'lsp_lines', branch = 'main' })
 
 -- Autocomplete
-Plug('neoclide/coc.nvim', { branch = 'release'})
+-- Plug('neoclide/coc.nvim', { branch = 'release'})
 
 -- GraphQL
 Plug 'jparise/vim-graphql'
+
+-- Prisma
+Plug 'pantharshit00/vim-prisma'
 
 -- Tree Sitter
 Plug('nvim-treesitter/nvim-treesitter')
