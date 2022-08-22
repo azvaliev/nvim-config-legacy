@@ -37,10 +37,15 @@ Plug 'github/copilot.vim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
--- Plug 'glepnir/lspsaga.nvim'
 
 -- Autocomplete
--- Plug('neoclide/coc.nvim', { branch = 'release'})
+Plug 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+Plug 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+-- Snippets
+Plug 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+Plug 'L3MON4D3/LuaSnip' -- Snippets plugin
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 
 -- GraphQL
 Plug 'jparise/vim-graphql'
@@ -52,7 +57,7 @@ Plug 'pantharshit00/vim-prisma'
 Plug('nvim-treesitter/nvim-treesitter')
 
 -- JS & TS
-Plug 'mattn/emmet-vim'
+-- Plug 'mattn/emmet-vim'
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 

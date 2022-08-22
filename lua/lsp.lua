@@ -3,7 +3,7 @@ require("mason").setup()
 -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 local lsps = {
 	"cssls", "cssmodules_ls", "tailwindcss", -- CSS
-	"eslint", "html", "emmet_ls", "tsserver", -- TS/JS, HTML, ESLint 
+	"eslint", "html", "tsserver", -- TS/JS, HTML, ESLint 
 	"marksman", "yamlls", "jsonls", -- Markdown, YAML, JSON
 	"pyright", "gopls", -- Go, Python
 	"sqls" -- SQL
@@ -24,9 +24,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -44,7 +41,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
+
+	-- ESLint
+  vim.keymap.set('n', '<Leader>fa', ':EslintFixAll<CR>:w<CR>', bufopts)
 end
 
 for _, lsp in ipairs(lsps) do
@@ -53,6 +52,7 @@ for _, lsp in ipairs(lsps) do
     flags = lsp_flags,
 	}
 end
+
 require('nvim-ts-autotag').setup()
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics,
