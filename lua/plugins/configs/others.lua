@@ -29,8 +29,6 @@ M.blankline = function()
     return
   end
 
-  require("base46").load_highlight "blankline"
-
   local options = {
     indentLine_enabled = 1,
     filetype_exclude = {
@@ -79,8 +77,6 @@ M.colorizer = function()
     },
   }
 
-  options = load_override(options, "NvChad/nvim-colorizer.lua")
-  colorizer.setup(options)
   -- execute colorizer as soon as possible
   return vim.tbl_isempty(options.filetypes or {}) or vim.cmd [[do FileType]]
 end
@@ -126,36 +122,50 @@ M.luasnip = function()
   })
 end
 
-M.gitsigns = function()
-  local present, gitsigns = pcall(require, "gitsigns")
-
-  if not present then
-    return
-  end
-
-  require("base46").load_highlight "git"
-
-  local options = {
-    signs = {
-      add = { hl = "DiffAdd", text = "│", numhl = "GitSignsAddNr" },
-      change = { hl = "DiffChange", text = "│", numhl = "GitSignsChangeNr" },
-      delete = { hl = "DiffDelete", text = "", numhl = "GitSignsDeleteNr" },
-      topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
-      changedelete = { hl = "DiffChangeDelete", text = "~", numhl = "GitSignsChangeNr" },
-    },
-  }
-
-  options = load_override(options, "lewis6991/gitsigns.nvim")
-  gitsigns.setup(options)
-end
-
 M.devicons = function()
   local present, devicons = pcall(require, "nvim-web-devicons")
 
   if present then
-    require("base46").load_highlight "devicons"
-
-    local options = { override = require("nvchad_ui.icons").devicons }
+    local options = {
+      override = {
+        md = {
+          icon = "⁋",
+          color = "#428850",
+          cterm_color = "65",
+          name = "md"
+        },
+        sum = {
+          icon = "⚙",
+          color = "#83ABD5",
+          cterm_color = "65",
+          name = "sum"
+        },
+        mod = {
+          icon = "⚙",
+          color = "#83ABD5",
+          cterm_color = "65",
+          name = "sum"
+        },
+        [".env"] = {
+          icon = "⚙",
+          color = "#8D8D8D",
+          cterm_color = "8",
+          name = "env"
+        },
+        [".env.template"] = {
+          icon = "⚙",
+          color = "#8D8D8D",
+          cterm_color = "8",
+          name = "template"
+        },
+        [".env.local"] = {
+          icon = "⚙",
+          color = "#8D8D8D",
+          cterm_color = "8",
+          name = "template"
+        },
+      }
+    }
     options = require("core.utils").load_override(options, "kyazdani42/nvim-web-devicons")
 
     devicons.setup(options)

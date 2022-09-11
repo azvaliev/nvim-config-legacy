@@ -5,7 +5,6 @@ local config = require("core.utils").load_config()
 g.vim_version = vim.version().minor
 g.nvchad_theme = config.ui.theme
 g.toggle_theme_icon = "   "
-g.transparency = config.ui.transparency
 g.theme_switcher_loaded = false
 
 -- use filetype.lua instead of filetype.vim. it's enabled by default in neovim 0.8 (nightly)
@@ -20,6 +19,7 @@ opt.showmode = false
 opt.title = true
 opt.clipboard = "unnamedplus"
 opt.cursorline = true
+vim.cmd[[hi CursorLine cterm=NONE ctermbg=8 ctermfg=NONE]]
 
 -- Indenting
 opt.expandtab = true
@@ -35,8 +35,11 @@ opt.mouse = "a"
 
 -- Numbers
 opt.number = true
+opt.relativenumber = true
 opt.numberwidth = 2
 opt.ruler = false
+
+vim.g.mapleader = "\\"
 
 -- disable nvim intro
 opt.shortmess:append "sI"
@@ -44,7 +47,6 @@ opt.shortmess:append "sI"
 opt.signcolumn = "yes"
 opt.splitbelow = true
 opt.splitright = true
-opt.termguicolors = true
 opt.timeoutlen = 400
 opt.undofile = true
 
@@ -54,8 +56,6 @@ opt.updatetime = 250
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
-
-g.mapleader = " "
 
 -- disable some builtin vim plugins
 local default_plugins = {

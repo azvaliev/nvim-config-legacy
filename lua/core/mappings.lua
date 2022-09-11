@@ -36,7 +36,7 @@ M.general = {
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
-    ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
+    ["<leader>rln"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
 
     -- update nvchad
     ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
@@ -178,9 +178,9 @@ M.lspconfig = {
       "lsp definition type",
     },
 
-    ["<leader>ra"] = {
+    ["<leader>rn"] = {
       function()
-        require("nvchad_ui.renamer").open()
+        vim.lsp.buf.rename()
       end,
       "lsp rename",
     },
@@ -199,7 +199,7 @@ M.lspconfig = {
       "lsp references",
     },
 
-    ["<leader>f"] = {
+    ["<leader>e"] = {
       function()
         vim.diagnostic.open_float()
       end,
@@ -275,7 +275,7 @@ M.telescope = {
   n = {
     -- find
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
-    ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
+    ["<leader>ffa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },

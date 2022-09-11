@@ -1,11 +1,9 @@
--- Chadrc overrides this file
-
 local M = {}
 
 M.options = {
   nvChad = {
-    update_url = "https://github.com/NvChad/NvChad",
-    update_branch = "main",
+    update_url = "https://github.com/azvaliev/NvChad",
+    update_branch = "master",
   },
 }
 
@@ -14,8 +12,8 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme_toggle = { "nord" },
+  theme = "nord", -- default theme
   transparency = false,
 }
 

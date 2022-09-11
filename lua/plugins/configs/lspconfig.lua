@@ -4,15 +4,14 @@ if not present then
   return
 end
 
-require("base46").load_highlight "lsp"
-require "nvchad_ui.lsp"
-
 local M = {}
 local utils = require "core.utils"
 
 -- export on_attach & capabilities for custom lspconfigs
 
 M.on_attach = function(client, bufnr)
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', '<Leader>fa', ':EslintFixAll<CR>:w<CR>', bufopts)
   if vim.g.vim_version > 7 then
     -- nightly
     client.server_capabilities.documentFormattingProvider = false
@@ -24,10 +23,6 @@ M.on_attach = function(client, bufnr)
   end
 
   utils.load_mappings("lspconfig", { buffer = bufnr })
-
-  if client.server_capabilities.signatureHelpProvider then
-    require("nvchad_ui.signature").setup(client)
-  end
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -69,6 +64,32 @@ lspconfig.sumneko_lua.setup {
       },
     },
   },
+}
+
+lspconfig.tsserver.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+lspconfig.cssls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+lspconfig.cssmodules_ls.setup{
+  on_attach = M.on_attach,
+}
+
+lspconfig.eslint.setup{
+  on_attach = M.on_attach,
+}
+
+lspconfig.sqlls.setup{
+  on_attach = M.on_attach,
+}
+
+lspconfig.pyright.setup{
+  on_attach = M.on_attach,
 }
 
 return M

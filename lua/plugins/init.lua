@@ -13,26 +13,13 @@ local plugins = {
 
   ["NvChad/extensions"] = { module = { "telescope", "nvchad" } },
 
-  ["NvChad/base46"] = {
-    config = function()
-      local ok, base46 = pcall(require, "base46")
-
-      if ok then
-        base46.load_theme()
-      end
-    end,
+  ["arcticicestudio/nord-vim"] = {
+    config = function ()
+      vim.cmd [[colorscheme nord]]
+    end
   },
 
-  ["NvChad/ui"] = {
-    after = "base46",
-    config = function()
-      local present, nvchad_ui = pcall(require, "nvchad_ui")
-
-      if present then
-        nvchad_ui.setup()
-      end
-    end,
-  },
+  ["joshdick/onedark.vim"] = {},
 
   ["NvChad/nvterm"] = {
     module = "nvterm",
@@ -44,8 +31,15 @@ local plugins = {
     end,
   },
 
+  ["vim-airline/vim-airline"] = {},
+
+  ["vim-airline/vim-airline-themes"] = {
+    config = function ()
+      vim.cmd[[let g:airline_theme='minimalist']]
+    end
+  },
+
   ["kyazdani42/nvim-web-devicons"] = {
-    after = "ui",
     module = "nvim-web-devicons",
     config = function()
       require("plugins.configs.others").devicons()
@@ -63,16 +57,6 @@ local plugins = {
     end,
   },
 
-  ["NvChad/nvim-colorizer.lua"] = {
-    opt = true,
-    setup = function()
-      require("core.lazy_load").on_file_open "nvim-colorizer.lua"
-    end,
-    config = function()
-      require("plugins.configs.others").colorizer()
-    end,
-  },
-
   ["nvim-treesitter/nvim-treesitter"] = {
     module = "nvim-treesitter",
     setup = function()
@@ -87,12 +71,8 @@ local plugins = {
 
   -- git stuff
   ["lewis6991/gitsigns.nvim"] = {
-    ft = "gitcommit",
-    setup = function()
-      require("core.lazy_load").gitsigns()
-    end,
     config = function()
-      require("plugins.configs.others").gitsigns()
+      require('gitsigns').setup()
     end,
   },
 
@@ -113,6 +93,10 @@ local plugins = {
       require "plugins.configs.lspconfig"
     end,
   },
+
+  -- Debugging
+  ["mfussenegger/nvim-dap"] = {},
+  ["simrat39/rust-tools.nvim"] = {},
 
   -- load luasnips + cmp related in insert mode only
 
@@ -151,7 +135,6 @@ local plugins = {
   },
 
   ["goolord/alpha-nvim"] = {
-    after = "base46",
     disable = true,
     config = function()
       require "plugins.configs.alpha"
@@ -169,16 +152,20 @@ local plugins = {
     end,
   },
 
-  -- file managing , picker etc
-  ["kyazdani42/nvim-tree.lua"] = {
-    ft = "alpha",
-    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    config = function()
-      require "plugins.configs.nvimtree"
-    end,
-    setup = function()
-      require("core.utils").load_mappings "nvimtree"
-    end,
+  ["MunifTanjim/nui.nvim"] = {},
+
+  ["nvim-neo-tree/neo-tree.nvim"] = {
+    config = function ()
+      vim.fn.sign_define("DiagnosticSignError",
+        {text = "X", texthl = "DiagnosticSignError"})
+      vim.fn.sign_define("DiagnosticSignWarn",
+        {text = "⚠", texthl = "DiagnosticSignWarn"})
+      vim.fn.sign_define("DiagnosticSignInfo",
+        {text = "i", texthl = "DiagnosticSignInfo"})
+      vim.fn.sign_define("DiagnosticSignHint",
+        {text = "", texthl = "DiagnosticSignHint"})
+      require("plugins.configs.neo-tree")
+    end
   },
 
   ["nvim-telescope/telescope.nvim"] = {

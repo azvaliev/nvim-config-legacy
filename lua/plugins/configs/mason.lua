@@ -5,16 +5,16 @@ if not present then
 end
 
 vim.api.nvim_create_augroup("_mason", { clear = true })
-vim.api.nvim_create_autocmd("Filetype", {
-  pattern = "mason",
-  callback = function()
-    require("base46").load_highlight "mason"
-  end,
-  group = "_mason",
-})
 
 local options = {
-  ensure_installed = { "lua-language-server" }, -- not an option from mason.nvim
+  ensure_installed = {
+    "lua-language-server",
+    "cssmodules-language-server", "tailwindcss-language-server", -- CSS
+    "eslint_d", "html-lsp", "emmet-ls", "typescript-language-server", -- TS/JS, HTML, ESLint 
+    "marksman", "yaml-language-server", "json-lsp", -- Markdown, YAML, JSON
+    "pyright", "gopls", -- Go, Python
+    "sqls" -- SQL
+  },
 
   ui = {
     icons = {

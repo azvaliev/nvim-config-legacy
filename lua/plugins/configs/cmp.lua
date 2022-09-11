@@ -4,8 +4,6 @@ if not present then
   return
 end
 
-require("base46").load_highlight "cmp"
-
 vim.opt.completeopt = "menuone,noselect"
 
 local function border(hl_name)
@@ -43,13 +41,6 @@ local options = {
   snippet = {
     expand = function(args)
       require("luasnip").lsp_expand(args.body)
-    end,
-  },
-  formatting = {
-    format = function(_, vim_item)
-      local icons = require("nvchad_ui.icons").lspkind
-      vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
-      return vim_item
     end,
   },
   mapping = {
