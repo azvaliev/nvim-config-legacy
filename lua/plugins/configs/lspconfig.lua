@@ -66,34 +66,45 @@ lspconfig.sumneko_lua.setup {
   },
 }
 
+local flags = {
+  debounce_text_changes = 150,
+}
+
 lspconfig.tsserver.setup{
   on_attach = M.on_attach,
   capabilities = M.capabilities,
+  flags = flags,
 }
 
 lspconfig.cssls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
+  flags = flags,
 }
 
 lspconfig.cssmodules_ls.setup{
   on_attach = M.on_attach,
+  flags = flags,
 }
 
 lspconfig.eslint.setup{
   on_attach = M.on_attach,
+  flags = flags,
 }
 
 lspconfig.sqlls.setup{
   on_attach = M.on_attach,
+  flags = flags,
 }
 
 lspconfig.pyright.setup{
   on_attach = M.on_attach,
+  flags = flags,
 }
 
 lspconfig.rust_analyzer.setup{
   on_attach = M.on_attach,
+  flags = flags,
 }
 
 return M
