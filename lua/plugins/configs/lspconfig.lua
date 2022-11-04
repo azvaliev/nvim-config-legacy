@@ -76,6 +76,12 @@ lspconfig.tsserver.setup{
   flags = flags,
 }
 
+lspconfig.tailwindcss.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  flags = flags,
+}
+
 lspconfig.cssls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
