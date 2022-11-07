@@ -98,6 +98,16 @@ lspconfig.eslint.setup{
   flags = flags,
 }
 
+lspconfig.prismals.setup{
+  on_attach = M.on_attach,
+  flags = flags,
+}
+
+lspconfig.gopls.setup{
+  on_attach = M.on_attach,
+  flags = flags,
+}
+
 lspconfig.sqlls.setup{
   on_attach = M.on_attach,
   flags = flags,

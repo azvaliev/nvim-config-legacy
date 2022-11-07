@@ -21,6 +21,15 @@ local plugins = {
 
   ["joshdick/onedark.vim"] = {},
 
+  ["github/copilot.vim"] = {},
+
+  ["AlessandroYorba/Alduin"] = {
+    config = function()
+      vim.cmd[[let g:alduin_Shout_Dragon_Aspect = 1]]
+      vim.cmd[[let g:alduin_Shout_Fire_Breath = 1]]
+    end
+  },
+
   ["NvChad/nvterm"] = {
     module = "nvterm",
     config = function()

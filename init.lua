@@ -5,6 +5,9 @@ end, 0)
 require "core"
 require "core.options"
 
+vim.cmd[[let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"]]
+vim.cmd[[let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"]]
+
 -- setup packer + plugins
 local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/opt/packer.nvim"
