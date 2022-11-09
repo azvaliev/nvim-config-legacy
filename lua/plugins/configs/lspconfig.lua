@@ -103,6 +103,16 @@ lspconfig.prismals.setup{
   flags = flags,
 }
 
+lspconfig.kotlin_language_server.setup{
+  on_attach = M.on_attach,
+  flags = flags
+}
+
+lspconfig.java_language_server.setup{
+  on_attach = M.on_attach,
+  flags = flags
+}
+
 lspconfig.gopls.setup{
   on_attach = M.on_attach,
   flags = flags,

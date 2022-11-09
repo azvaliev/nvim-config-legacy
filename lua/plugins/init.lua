@@ -106,6 +106,7 @@ local plugins = {
   -- Debugging
   ["mfussenegger/nvim-dap"] = {},
   ["simrat39/rust-tools.nvim"] = {},
+  ["vim-test/vim-test"] = {},
 
   -- load luasnips + cmp related in insert mode only
 
