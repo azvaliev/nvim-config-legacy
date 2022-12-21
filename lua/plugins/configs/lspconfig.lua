@@ -98,6 +98,11 @@ lspconfig.eslint.setup{
   flags = flags,
 }
 
+lspconfig.astro.setup{
+  on_attach = M.on_attach,
+  flags = flags,
+}
+
 lspconfig.prismals.setup{
   on_attach = M.on_attach,
   flags = flags,
